@@ -1,0 +1,9 @@
+{
+  "name": "laravel-app",
+  // ターゲットのdocker-compose.ymlファイル
+  "dockerComposeFile": "../docker-compose.yml",
+  // 開発環境のコンテナ
+  "service": "app",
+  // コンテナ作成時に開くフォルダ
+  "workspaceFolder": "/var/www"
+}

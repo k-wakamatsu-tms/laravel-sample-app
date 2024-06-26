@@ -1,0 +1,17 @@
+version: "3"
+services:
+  nginx:
+    image: nginx:1.25.4
+    ports:
+      - 8000:80
+    volumes:
+      - ./src:/var/www/src
+      - ./docker/nginx:/etc/nginx/conf.d
+    depends_on:
+      - app
+  app:
+    build:
+      context: ./docker/php
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/var/www
